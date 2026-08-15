@@ -1,62 +1,89 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+const siteName = "DavidVR";
+const description = "About DavidVR and my website.";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <title>About Me | {siteName}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="/">DavidVR</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a class="active" href="/about">About</a>
+      </nav>
+    </header>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+    <main>
+      <section class="about">
+        <p class="eyebrow">About me</p>
+        <h1>Hi, I'm DavidVR 👋</h1>
+        <p class="lead">Welcome to my website!</p>
+        <p>
+          I'm DavidVR, and this website is my personal place on the web. I enjoy gaming,
+          creating things online, and working on websites and projects.
+        </p>
+        <p>
+          This site is being rebuilt from my old Google Sites website using Astro, while keeping
+          the simple personal feel of the original.
+        </p>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+        <div class="links">
+          <a href="https://www.davidvrsite.com">Visit davidvrsite.com →</a>
+          <a href="https://github.com/David686-goyu/davidvrsite">View the GitHub project →</a>
+        </div>
+      </section>
+    </main>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+    <footer>
+      <p>© {new Date().getFullYear()} DavidVR</p>
+    </footer>
+  </body>
+</html>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #f6f8fc;
+  }
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: white;
+    border-bottom: 1px solid #e6e9f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-weight: 800; font-size: 1.25rem; color: #172033; text-decoration: none; }
+  nav { display: flex; gap: 22px; }
+  nav a { color: #315ee7; text-decoration: none; font-weight: 600; }
+  nav a.active { text-decoration: underline; text-underline-offset: 5px; }
+  .about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 90px 24px 100px;
+  }
+  .eyebrow {
+    color: #315ee7;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  h1 { font-size: clamp(2.5rem, 7vw, 4.5rem); line-height: 1.05; margin: 12px 0 20px; }
+  .lead { font-size: 1.35rem; font-weight: 600; }
+  .about p:not(.eyebrow):not(.lead) { color: #5e687b; font-size: 1.08rem; line-height: 1.8; }
+  .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+  .links a { color: #315ee7; text-decoration: none; font-weight: 700; }
+  footer { text-align: center; padding: 30px 20px; color: #697386; border-top: 1px solid #e6e9f0; background: white; }
+</style>
