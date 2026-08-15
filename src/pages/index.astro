@@ -1,41 +1,87 @@
 ---
-// SERVER-SIDE JAVASCRIPT (Runs at build time or on Cloudflare Edge)
-const siteName = "My Cloudflare Pages App";
-const currentTime = new Date().toLocaleTimeString();
-
-// Fetching data at build/request time on the server
-let serverData = null;
-try {
-  const res = await fetch("https://api.github.com/zen");
-  serverData = await res.text();
-} catch (e) {
-  serverData = "Could not fetch quote";
-}
+const siteName = "DavidVR";
+const description = "Welcome to DavidVR's website!";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>{siteName}</title>
+    <meta name="description" content={description} />
+    <title>{siteName} | Home</title>
   </head>
   <body>
-    <h1>Welcome to {siteName}!</h1>
-    <p>Page rendered at: {currentTime}</p>
-    <p>Server Quote: <em>"{serverData}"</em></p>
+    <header class="site-header">
+      <a class="logo" href="/">DavidVR</a>
+      <nav aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </nav>
+    </header>
 
-    <!-- Client Interactive Element -->
-    <button id="counterBtn">Clicks: 0</button>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Welcome to my website</p>
+        <h1>DavidVR</h1>
+        <p class="intro">Welcome to my website! This is the new Astro version of my old Google Sites website.</p>
+        <div class="actions">
+          <a class="button primary" href="/about">About me</a>
+          <a class="button" href="https://www.davidvrsite.com">Visit davidvrsite.com</a>
+        </div>
+      </section>
 
-    <!-- CLIENT-SIDE JAVASCRIPT (Runs in the browser) -->
-    <script>
-      let count = 0;
-      const btn = document.getElementById("counterBtn");
+      <section class="cards" aria-label="Website sections">
+        <article>
+          <h2>About</h2>
+          <p>Learn more about DavidVR and what I do online.</p>
+          <a href="/about">Read more →</a>
+        </article>
+        <article>
+          <h2>My website</h2>
+          <p>You're viewing the Astro version of my personal website.</p>
+          <a href="https://www.davidvrsite.com">Open site →</a>
+        </article>
+      </section>
+    </main>
 
-      btn?.addEventListener("click", () => {
-        count++;
-        btn.textContent = `Clicks: ${count}`;
-      });
-    </script>
+    <footer>
+      <p>© {new Date().getFullYear()} DavidVR</p>
+    </footer>
   </body>
 </html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(body) {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #f6f8fc;
+  }
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 7%;
+    background: white;
+    border-bottom: 1px solid #e6e9f0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .logo { font-weight: 800; font-size: 1.25rem; color: #172033; text-decoration: none; }
+  nav { display: flex; gap: 22px; }
+  nav a, article a { color: #315ee7; text-decoration: none; font-weight: 600; }
+  .hero { max-width: 900px; margin: 0 auto; padding: 110px 24px 80px; text-align: center; }
+  .eyebrow { color: #315ee7; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  h1 { font-size: clamp(3rem, 9vw, 6rem); line-height: .95; margin: 15px 0 25px; }
+  .intro { max-width: 650px; margin: auto; font-size: 1.2rem; line-height: 1.7; color: #5e687b; }
+  .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .button { display: inline-block; padding: 12px 20px; border: 1px solid #d8ddea; border-radius: 10px; color: #172033; background: white; text-decoration: none; font-weight: 700; }
+  .button.primary { color: white; background: #315ee7; border-color: #315ee7; }
+  .cards { max-width: 1000px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  article { background: white; padding: 28px; border: 1px solid #e6e9f0; border-radius: 16px; box-shadow: 0 8px 30px rgba(20, 30, 55, .06); }
+  article p { color: #5e687b; line-height: 1.6; }
+  footer { text-align: center; padding: 30px 20px; color: #697386; border-top: 1px solid #e6e9f0; background: white; }
+  @media (max-width: 650px) { .site-header { padding: 16px 20px; } .cards { grid-template-columns: 1fr; } }
+</style>
