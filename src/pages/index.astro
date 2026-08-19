@@ -48,7 +48,7 @@ const description = "Welcome to DavidVR's website!";
     </main>
 
     <footer>
-      <p>© {new Date().getFullYear()} DavidVR</p>
+      <a class="copyright" href="/copyright">© 2026 DavidVR</a>
     </footer>
   </body>
 </html>
@@ -71,5 +71,7 @@ const description = "Welcome to DavidVR's website!";
   article { background: white; padding: 28px; border: 1px solid #e6e9f0; border-radius: 16px; box-shadow: 0 8px 30px rgba(20, 30, 55, .06); }
   article p { color: #5e687b; line-height: 1.6; }
   footer { text-align: center; padding: 30px 20px; color: #697386; border-top: 1px solid #e6e9f0; background: white; }
+  .copyright { color: inherit; text-decoration: none; }
+  .copyright:hover { text-decoration: underline; }
   @media (max-width: 650px) { .site-header { padding: 16px 20px; } .cards { grid-template-columns: 1fr; } }
 </style>
