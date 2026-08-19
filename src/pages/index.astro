@@ -18,6 +18,7 @@ const description = "Welcome to DavidVR's website!";
       <nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/about">About</a>
+        <a href="https://info.davidvrsite.com">Info</a>
       </nav>
     </header>
 
@@ -28,6 +29,7 @@ const description = "Welcome to DavidVR's website!";
         <p class="intro">Welcome to my website! This is my personal website.</p>
         <div class="actions">
           <a class="button primary" href="/about">About me</a>
+          <a class="button" href="https://info.davidvrsite.com">Visit Info Website</a>
         </div>
       </section>
 
@@ -36,6 +38,11 @@ const description = "Welcome to DavidVR's website!";
           <h2>About</h2>
           <p>Learn more about DavidVR and what I do online.</p>
           <a href="/about">Read more →</a>
+        </article>
+        <article>
+          <h2>Info Website</h2>
+          <p>Visit my other website for more information.</p>
+          <a href="https://info.davidvrsite.com">Go to Info Website →</a>
         </article>
       </section>
     </main>
@@ -48,23 +55,8 @@ const description = "Welcome to DavidVR's website!";
 
 <style>
   :global(*) { box-sizing: border-box; }
-  :global(body) {
-    margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #172033;
-    background: #f6f8fc;
-  }
-  .site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 7%;
-    background: white;
-    border-bottom: 1px solid #e6e9f0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+  :global(body) { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f6f8fc; }
+  .site-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 7%; background: white; border-bottom: 1px solid #e6e9f0; position: sticky; top: 0; z-index: 10; }
   .logo { font-weight: 800; font-size: 1.25rem; color: #172033; text-decoration: none; }
   nav { display: flex; gap: 22px; }
   nav a, article a { color: #315ee7; text-decoration: none; font-weight: 600; }
@@ -75,9 +67,9 @@ const description = "Welcome to DavidVR's website!";
   .actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .button { display: inline-block; padding: 12px 20px; border: 1px solid #d8ddea; border-radius: 10px; color: #172033; background: white; text-decoration: none; font-weight: 700; }
   .button.primary { color: white; background: #315ee7; border-color: #315ee7; }
-  .cards { max-width: 1000px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+  .cards { max-width: 1000px; margin: 0 auto; padding: 0 24px 80px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   article { background: white; padding: 28px; border: 1px solid #e6e9f0; border-radius: 16px; box-shadow: 0 8px 30px rgba(20, 30, 55, .06); }
   article p { color: #5e687b; line-height: 1.6; }
   footer { text-align: center; padding: 30px 20px; color: #697386; border-top: 1px solid #e6e9f0; background: white; }
-  @media (max-width: 650px) { .site-header { padding: 16px 20px; } }
+  @media (max-width: 650px) { .site-header { padding: 16px 20px; } .cards { grid-template-columns: 1fr; } }
 </style>
