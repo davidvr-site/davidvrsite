@@ -1,1 +1,39 @@
+---
+const mainSite = "https://davidvrsite.com";
+const newShop = "https://new.davidvrsite.com";
+---
 
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="The DavidVR shop has moved to a new address." />
+    <title>Shop moved | DavidVR</title>
+    <style>
+      :root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #172033; background: #f6f8fc; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 24px; box-sizing: border-box; }
+      main { width: min(100%, 620px); padding: 40px; box-sizing: border-box; background: white; border: 1px solid #e6e9f0; border-radius: 18px; box-shadow: 0 12px 40px rgba(20, 30, 55, .08); }
+      .eyebrow { color: #315ee7; font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+      h1 { margin: 12px 0; font-size: clamp(2rem, 7vw, 3rem); }
+      p { color: #5e687b; line-height: 1.7; }
+      .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+      a { display: inline-block; padding: 12px 18px; border: 1px solid #d8ddea; border-radius: 10px; color: #172033; font-weight: 700; text-decoration: none; }
+      a.primary { color: white; background: #315ee7; border-color: #315ee7; }
+      a:focus-visible { outline: 3px solid #8ca8ff; outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">DavidVR shop update</p>
+      <h1>The shop has moved</h1>
+      <p>
+        The old shop address, <strong>shop.davidvrsite.com</strong>, has moved.
+        Visit the shop at its new address, or head to the main DavidVR website.
+      </p>
+      <div class="links">
+        <a class="primary" href={newShop}>Visit the new shop</a>
+        <a href={mainSite}>Go to davidvrsite.com</a>
+      </div>
+    </main>
+  </body>
+</html>
